@@ -1,0 +1,23 @@
+# Anything starting with a + is configuration for the ISA.
++ REG_COUNT : 8           # How many registers there are, including any who cannot be written or read from by normal means.
++ REG_EXCLUDE_WRITE : 0   # These addresses cannot be written to. Seperated by spaces.
++ REG_EXCLUDE_READ : NUL  # These addresses cannot be read from. NUL signifies that all addresses are valid.
++ START_ADDRESS : 0       # The start address of a program made with this ISA.
++ MEMORY_SIZE : 512       # In bytes, the size of the memory, and thus the maximum size of any program made with this ISA, including zeros preceding it.
++ IO_IN_SIZE                     :                8 # How many input I/O ports there are. As you can see, the .isa format doesn't care for whitespace.
++ IO_OUT_SIZE : 8 # How many output I/O ports there are. 
+
+# These are comments.
+#* These are multiline comments. *#
+#* Let's
+Put
+That
+To
+The
+Test #*
+*#
+# Each number seperated by : is an operand.
+
+OPC ADD : Address(4) # INSTRUCTION : OperandName(OperandBitCount) : OperandName(OperandBitCount) : ...
+OPC SUB : Address(4)
+OPC LDI : Address(4) : Immediate(8)
